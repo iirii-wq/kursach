@@ -291,6 +291,37 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
 
+#1
+        # --- Добавляем 5-ю категорию с иконкой ---
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setSpacing(0)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+
+        # Метка для иконки здоровья
+        self.icon_health = QLabel(self.categories_frame)
+        self.icon_health.setObjectName(u"icon_health")
+        self.icon_health.setMaximumSize(QSize(24, 16777215))
+        self.icon_health.setStyleSheet(u"background-color: none;\nborder: none;")
+        # Указываем путь к вашей иконке из файла ресурсов
+        self.icon_health.setPixmap(
+                QPixmap(u":/icon /icon black/heart_plus_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"))
+        self.horizontalLayout_9.addWidget(self.icon_health)
+
+        # Метка текста "Здоровье"
+        self.label_health = QLabel(self.categories_frame)
+        self.label_health.setObjectName(u"label_health")
+        self.label_health.setStyleSheet(
+                u"color: black;\nfont-weight: bold;\nfont-size: 14pt;\nbackground-color: none;\nborder: none;")
+        self.horizontalLayout_9.addWidget(self.label_health)
+
+        # Метка суммы для здоровья
+        self.balance_health = QLabel(self.categories_frame)
+        self.balance_health.setObjectName(u"balance_health")
+        self.balance_health.setStyleSheet(u"color: black;\nfont-size: 16pt;\nbackground-color: none;\nborder: none;")
+        self.horizontalLayout_9.addWidget(self.balance_health)
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_9)
+#1
 
         self.horizontalLayout_7.addWidget(self.categories_frame)
 
@@ -420,7 +451,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Expense tracker", None))
-        self.le_current_balance.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0439 \u0431\u0430\u043b\u0430\u043d\u0441", None))
+        self.le_current_balance.setText(QCoreApplication.translate("MainWindow",u"\u0412\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0439 \u0431\u0430\u043b\u0430\u043d\u0441",None))
         self.le_balance.setText(QCoreApplication.translate("MainWindow", u" $1450", None))
         self.icon_up_arrow.setText("")
         self.label_income.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0445\u043e\u0434", None))
@@ -428,19 +459,31 @@ class Ui_MainWindow(object):
         self.ico_down_arrow.setText("")
         self.label_outcome.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0441\u0445\u043e\u0434", None))
         self.outcome_balance.setText(QCoreApplication.translate("MainWindow", u" $1450", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \u0440\u0430\u0441\u0445\u043e\u0434\u043e\u0432", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow",u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \u0440\u0430\u0441\u0445\u043e\u0434\u043e\u0432",None))
+
+            # --- Вот здесь меняем названия категорий под наш новый список ---
         self.icon_groceries.setText("")
-        self.label_groceries.setText(QCoreApplication.translate("MainWindow", u"\u0411\u0430\u043a\u0430\u043b\u0435\u044f", None))
-        self.balance_groceries.setText(QCoreApplication.translate("MainWindow", u"$1000", None))
+        self.label_groceries.setText(QCoreApplication.translate("MainWindow", u"Продукты", None))
+        self.balance_groceries.setText(QCoreApplication.translate("MainWindow", u"$0", None))
+
         self.ico_entertainment.setText("")
-        self.label_entertainment.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u044f", None))
-        self.balance_entertainment.setText(QCoreApplication.translate("MainWindow", u"$1000", None))
+        self.label_entertainment.setText(QCoreApplication.translate("MainWindow", u"Развлечения", None))
+        self.balance_entertainment.setText(QCoreApplication.translate("MainWindow", u"$0", None))
+
         self.ico_auto.setText("")
-        self.label_auto.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0432\u0442\u043e-\u0442\u043e\u0432\u0430\u0440\u044b", None))
-        self.balance_auto.setText(QCoreApplication.translate("MainWindow", u"$1000", None))
+        self.label_auto.setText(QCoreApplication.translate("MainWindow", u"Транспорт", None))
+        self.balance_auto.setText(QCoreApplication.translate("MainWindow", u"$0", None))
+
+        # Обратите внимание: у нас появилась 5-я категория (Здоровье).
+        # Если в ui_main.py была только 4 категория "Другое", её тоже можно переименовать или добавить новую метку для здоровья.
+        self.icon_health.setText("")
+        self.label_health.setText(QCoreApplication.translate("MainWindow", u"Здоровье", None))
+        self.balance_health.setText(QCoreApplication.translate("MainWindow", u"$0", None))
+
         self.icon_other.setText("")
-        self.label_other.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0440\u0443\u0433\u043e\u0435", None))
-        self.balance_other.setText(QCoreApplication.translate("MainWindow", u"$1000", None))
+        self.label_other.setText(QCoreApplication.translate("MainWindow", u"Другое", None))
+        self.balance_other.setText(QCoreApplication.translate("MainWindow", u"$0", None))
+
         self.btn_new_transaction.setText(QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u0430\u044f \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u044f", None))
         self.btn_edit_transaction.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u044e", None))
         self.btn_delete_transaction.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u044e", None))

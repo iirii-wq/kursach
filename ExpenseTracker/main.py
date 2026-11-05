@@ -3,6 +3,7 @@ import sys
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtSql import QSqlTableModel
+from PySide6.QtCore import Qt
 
 from ui_main import Ui_MainWindow
 from new_transaction import Ui_Dialog
@@ -25,15 +26,26 @@ class ExpenseTracker(QMainWindow):
         self.ui.le_balance.setText(self.conn.total_balance())
         self.ui.income_balance.setText(self.conn.total_income())
         self.ui.outcome_balance.setText(self.conn.total_outcome())
-        self.ui.balance_groceries.setText(self.conn.total_groceries())
-        self.ui.balance_auto.setText(self.conn.total_auto())
-        self.ui.balance_entertainment.setText(self.conn.total_entertainment())
-        self.ui.balance_other.setText(self.conn.total_other())
 
+        # Обновляем все 5 категорий
+        self.ui.balance_groceries.setText(self.conn.total_products())
+        self.ui.balance_auto.setText(self.conn.total_transport())
+        self.ui.balance_entertainment.setText(self.conn.total_entertainment())
+        self.ui.balance_health.setText(self.conn.total_health())
+        self.ui.balance_other.setText(self.conn.total_other())
 
     def view_data(self):
         self.model = QSqlTableModel(self)
         self.model.setTable('expenses')
+
+        # Устанавливаем заголовки для всех колонок, включая ID
+        self.model.setHeaderData(0, Qt.Horizontal, "ID")
+        self.model.setHeaderData(1, Qt.Horizontal, "Дата")
+        self.model.setHeaderData(2, Qt.Horizontal, "Категория")
+        self.model.setHeaderData(3, Qt.Horizontal, "Описание")
+        self.model.setHeaderData(4, Qt.Horizontal, "Сумма")
+        self.model.setHeaderData(5, Qt.Horizontal, "Тип")
+
         self.model.select()
         self.ui.tableView.setModel(self.model)
 

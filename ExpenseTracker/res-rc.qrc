@@ -10,6 +10,7 @@
     <file>icon black/post_add_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</file>
     <file>icon black/shopping_cart_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</file>
     <file>icon black/sports_esports_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icon black/heart_plus_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</file>
     <file>icon/call_received_white_24dp.svg</file>
     <file>icon/delete_black_24dp.svg</file>
     <file>icon/delete_white_24dp.svg</file>
@@ -22,3 +23,4 @@
     <file>icon/sports_esports_white_24dp.svg</file>
   </qresource>
 </RCC>
+

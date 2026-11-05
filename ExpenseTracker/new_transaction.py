@@ -154,16 +154,17 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.lbl_new_transaction.setText(QCoreApplication.translate("Dialog", u"\u041d\u043e\u0432\u0430\u044f \u0442\u0440\u0430\u0437\u0430\u043a\u0446\u0438\u044f", None))
-        self.cb_category.setItemText(0, QCoreApplication.translate("Dialog", u"\u0411\u0430\u043a\u0430\u043b\u0435\u044f", None))
-        self.cb_category.setItemText(1, QCoreApplication.translate("Dialog", u"\u0420\u0430\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u044f", None))
-        self.cb_category.setItemText(2, QCoreApplication.translate("Dialog", u"\u0410\u0432\u0442\u043e-\u0442\u043e\u0432\u0430\u0440\u044b", None))
-        self.cb_category.setItemText(3, QCoreApplication.translate("Dialog", u"\u0414\u0440\u0443\u0433\u043e\u0435", None))
-        self.cb_category.setItemText(4, QCoreApplication.translate("Dialog", u"\u0420\u0430\u0431\u043e\u0442\u0430", None))
+        self.lbl_new_transaction.setText(QCoreApplication.translate("Dialog", u"\u041d\u043e\u0432\u0430\u044f \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u044f", None))
+        # Новые категории вместо старых:
+        self.cb_category.setItemText(0, QCoreApplication.translate("Dialog", u"Продукты", None))
+        self.cb_category.setItemText(1, QCoreApplication.translate("Dialog", u"Транспорт", None))
+        self.cb_category.setItemText(2, QCoreApplication.translate("Dialog", u"Развлечения", None))
+        self.cb_category.setItemText(3, QCoreApplication.translate("Dialog", u"Здоровье", None))
+        self.cb_category.setItemText(4, QCoreApplication.translate("Dialog", u"Другое", None))
 
-        self.cb_category.setPlaceholderText(QCoreApplication.translate("Dialog", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044e", None))
+        self.cb_category.setPlaceholderText(QCoreApplication.translate("Dialog", u"\u0412\u044e\u0431\u0435\u0440\u0438\u0442\u0435 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044e", None))
         self.le_description.setPlaceholderText(QCoreApplication.translate("Dialog", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", None))
-        self.le_balance.setPlaceholderText(QCoreApplication.translate("Dialog", u"\u0411\u0430\u043b\u0430\u043d\u0441", None))
+        self.le_balance.setPlaceholderText(QCoreApplication.translate("Dialog", u"\u0421\u0443\u043c\u043c\u0430", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"\u0414\u043e\u0445\u043e\u0434", None))
         self.comboBox_2.setItemText(1, QCoreApplication.translate("Dialog", u"\u0420\u0430\u0441\u0445\u043e\u0434", None))
 

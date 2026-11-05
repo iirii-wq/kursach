@@ -76,18 +76,19 @@ class Data:
     def total_outcome(self):
         return self.get_total(column='Balance', filter='Status', value='Расход')
 
+    def total_products(self):
+        return self.get_total(column='Balance', filter='Category', value='Продукты')
 
-    def total_groceries(self):
-        return self.get_total(column='Balance', filter='Category', value='Бакалея') # У вас же по-русски в БД?
-
-    def total_auto(self):
-        return self.get_total(column='Balance', filter='Category', value='Авто-товары')
+    def total_transport(self):
+        return self.get_total(column='Balance', filter='Category', value='Транспорт')
 
     def total_entertainment(self):
         return self.get_total(column='Balance', filter='Category', value='Развлечения')
 
+    def total_health(self):
+        return self.get_total(column='Balance', filter='Category', value='Здоровье')
+
     def total_other(self):
         return self.get_total(column='Balance', filter='Category', value='Другое')
-
 
 
